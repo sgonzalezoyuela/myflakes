@@ -42,7 +42,7 @@
             my-name = "xclipf";
             my-src = ./scripts/xclipf.sh;
             my-script = buildScript my-name my-src;
-            my-buildInputs = with pkgs; [ cat xclip ];
+            my-buildInputs = with pkgs; [ coreutils xclip ];
           }
 
         ];
