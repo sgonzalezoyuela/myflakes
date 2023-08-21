@@ -38,6 +38,13 @@
             my-buildInputs = with pkgs; [ curl less tmux ];
           }
 
+          rec {
+            my-name = "xclipf";
+            my-src = ./scripts/xclipf.sh;
+            my-script = buildScript my-name my-src;
+            my-buildInputs = with pkgs; [ coreutils xclip ];
+          }
+
         ];
 
         myPackages = builtins.listToAttrs (map
