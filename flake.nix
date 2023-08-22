@@ -45,6 +45,20 @@
             my-buildInputs = with pkgs; [ coreutils xclip ];
           }
 
+          rec {
+            my-name = "vf";
+            my-src = ./scripts/vf.sh;
+            my-script = buildScript my-name my-src;
+            my-buildInputs = with pkgs; [ fzf ];
+          }
+
+          rec {
+            my-name = "catf";
+            my-src = ./scripts/catf.sh;
+            my-script = buildScript my-name my-src;
+            my-buildInputs = with pkgs; [ fzf ];
+          }
+
         ];
 
         myPackages = builtins.listToAttrs (map
